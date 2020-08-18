@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import modelo.dao.CidadeDAO;
 import modelo.dao.EstadoDAO;
 import org.junit.After;
@@ -55,6 +57,27 @@ public class TesteGeral {
         daoCidadeDAO.cadastrarCidade(cidade3);
         daoCidadeDAO.cadastrarCidade(cidade4);
         
+        Animal animal0 = new Animal(0, "BILI", true);
+        Animal animal1 = new Animal(1, "TOTO", true);
+        Animal animal2 = new Animal(2, "PELUCIA", true);
+        Animal animal3 = new Animal(3, "SALSICHA", true);
+        
+        ArrayList<Animal> listaAnimal1 = new ArrayList<>();
+        ArrayList<Animal> listaAnimal2 = new ArrayList<>();
+        listaAnimal1.add(animal3);
+        
+        
+        Pessoa pessoa1 = new Pessoa(
+                "ITALO",
+                0,
+                574,
+                true,
+                "AVENIDA BELO HORIZONTE",
+                "CENTRO",
+                LocalDate.of(12, 04, 2000),
+                cidade1,
+                listaAnimal1
+                );
     }
     
     @After
