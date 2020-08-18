@@ -16,18 +16,37 @@ public class EstadoDAO {
     
     ArrayList<Estado> banco = Conexao.BD_ESTADO;
     
+    public void cadastrarEstado(Estado estado) {
+        if (estado.getId() == 0) {
+            banco.add(estado);
+        }
+    }
+    
     public Estado getEstadoByID(int id) {
-        Estado estado = new Estado();
-        return estado;
+        for (Estado estadoFor : banco) {
+            if (estadoFor.getId() == id) {
+                return estadoFor;
+            }
+        }
+        
+        return new Estado();
     }
     
     public Estado getEstadoBySigla(String sigla) {
-        Estado estado = new Estado();
-        return estado;
+        for (Estado estadoFor : banco) {
+            if (estadoFor.getSigla().equals(sigla)) {
+                return estadoFor;
+            }
+        }        
+        return new Estado();
     }
     
     public Estado getEstadoByName(String nome) {
-        Estado estado = new Estado();
-        return estado;
+        for (Estado estadoFor : banco) {
+            if (estadoFor.getNome().equals(nome)) {
+                return estadoFor;
+            }
+        }
+        return new Estado();
     }
 }

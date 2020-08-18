@@ -14,15 +14,29 @@ import modelo.Cidade;
  */
 public class CidadeDAO {
     
-    ArrayList<Cidade> BD = Conexao.BD_CIDADE;
+    ArrayList<Cidade> banco = Conexao.BD_CIDADE;
+    
+    public void cadastrarCidade(Cidade cidade) {
+        if (getCidadeByName(cidade.getNome()).getNome() != null) {
+            banco.add(cidade);
+        }
+    }
     
     public Cidade getCidadeByID(int id) {
-        Cidade cidade = new Cidade();
-        return cidade;
+        for (Cidade cidadeFor : banco) {
+            if (cidadeFor.getId() == id) {
+                return cidadeFor;
+            }
+        }
+        return new Cidade();
     }
     
     public Cidade getCidadeByName(String nome) {
-        Cidade cidade = new Cidade();
-        return cidade;
+        for (Cidade cidadeFor : banco) {
+            if (cidadeFor.getNome().equals(nome)) {
+                return cidadeFor;
+            }
+        }
+        return new Cidade();
     }
 }

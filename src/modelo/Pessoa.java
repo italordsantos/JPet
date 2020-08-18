@@ -27,7 +27,7 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(int id, int numero, boolean registroAtivo, String nome, String endereco, String bairro, LocalDate dataNascimento, Cidade cidade, ArrayList<Animal> listaAnimais) {
+    public Pessoa(String nome, int id, int numero, boolean registroAtivo, String endereco, String bairro, LocalDate dataNascimento, Cidade cidade, ArrayList<Animal> listaAnimais) {
         this.id = id;
         this.numero = numero;
         this.registroAtivo = registroAtivo;
