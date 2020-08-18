@@ -19,13 +19,19 @@ public class Animal {
     public Animal() {
     }
 
+    public Animal(int id, String nome, boolean registroAtivo) {
+        this.id = id;
+        this.nome = nome;
+        this.registroAtivo = registroAtivo;
+    }
+
     public Animal(int id, String nome, boolean registroAtivo, Pessoa dono) {
         this.id = id;
         this.nome = nome;
         this.registroAtivo = registroAtivo;
         this.dono = dono;
     }
-
+    
     public int getId() {
         return id;
     }
