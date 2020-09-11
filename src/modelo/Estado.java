@@ -1,28 +1,19 @@
+package modelo;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
-
 /**
  *
- * @author italo
+ * @author Rafael
  */
 public class Estado {
-    
+
     private int id;
     private String nome;
     private String sigla;
-
-    public Estado(int id, String nome, String sigla) {
-        this.id = id;
-        this.nome = nome;
-        this.sigla = sigla;
-    }
-
-    public Estado() {
-    }
 
     public int getId() {
         return id;
@@ -52,5 +43,5 @@ public class Estado {
     public String toString() {
         return "Estado{" + "id=" + id + ", nome=" + nome + ", sigla=" + sigla + '}';
     }
-    
+
 }

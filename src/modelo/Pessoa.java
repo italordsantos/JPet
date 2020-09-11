@@ -1,43 +1,28 @@
+package modelo;
+
+import java.util.ArrayList;
+import java.util.Date;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-
 /**
  *
- * @author italo
+ * @author Rafael
  */
 public class Pessoa {
 
     private int id;
-    private int numero;
-    private boolean registroAtivo;
     private String nome;
+    private Date dataNascimento;
     private String endereco;
+    private int numero;
     private String bairro;
-    private LocalDate dataNascimento;
     private Cidade cidade;
-    private ArrayList<Animal> listaAnimais;
-
-    public Pessoa() {
-    }
-
-    public Pessoa(String nome, int id, int numero, boolean registroAtivo, String endereco, String bairro, LocalDate dataNascimento, Cidade cidade, ArrayList<Animal> listaAnimais) {
-        this.id = id;
-        this.numero = numero;
-        this.registroAtivo = registroAtivo;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.bairro = bairro;
-        this.dataNascimento = dataNascimento;
-        this.cidade = cidade;
-        this.listaAnimais = listaAnimais;
-    }
+    private ArrayList<Animal> animais;
+    private boolean ativo;
 
     public int getId() {
         return id;
@@ -45,22 +30,6 @@ public class Pessoa {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public boolean isRegistroAtivo() {
-        return registroAtivo;
-    }
-
-    public void setRegistroAtivo(boolean registroAtivo) {
-        this.registroAtivo = registroAtivo;
     }
 
     public String getNome() {
@@ -71,12 +40,28 @@ public class Pessoa {
         this.nome = nome;
     }
 
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
     public String getEndereco() {
         return endereco;
     }
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public String getBairro() {
@@ -87,14 +72,6 @@ public class Pessoa {
         this.bairro = bairro;
     }
 
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
     public Cidade getCidade() {
         return cidade;
     }
@@ -103,17 +80,26 @@ public class Pessoa {
         this.cidade = cidade;
     }
 
-    public ArrayList<Animal> getListaAnimais() {
-        return listaAnimais;
+    public ArrayList<Animal> getAnimais() {
+        return animais;
     }
 
-    public void setListaAnimais(ArrayList<Animal> listaAnimais) {
-        this.listaAnimais = listaAnimais;
+    public void setAnimais(ArrayList<Animal> animais) {
+        this.animais = animais;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 
     @Override
     public String toString() {
-        return "Pessoa{" + "id=" + id + ", numero=" + numero + ", registroAtivo=" + registroAtivo + ", nome=" + nome + ", endereco=" + endereco + ", bairro=" + bairro + ", dataNascimento=" + dataNascimento + ", cidade=" + cidade + ", listaAnimais=" + listaAnimais + '}';
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", endereco=" + endereco + ", numero=" + numero + ", bairro=" + bairro + ", cidade=" + cidade + ", animais=" + animais + ", ativo=" + ativo + '}';
     }
 
+    
 }

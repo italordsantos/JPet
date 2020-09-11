@@ -9,11 +9,13 @@ package modelo;
  *
  * @author Rafael
  */
-public class Animal {
+public class ProdutoServico {
 
     private int id;
     private String nome;
-    private Pessoa dono;
+    private boolean servico;
+    private float valor;
+    private int frequenciaAplicacao;
     private boolean ativo;
 
     public int getId() {
@@ -32,12 +34,28 @@ public class Animal {
         this.nome = nome;
     }
 
-    public Pessoa getDono() {
-        return dono;
+    public boolean isServico() {
+        return servico;
     }
 
-    public void setDono(Pessoa dono) {
-        this.dono = dono;
+    public void setServico(boolean servico) {
+        this.servico = servico;
+    }
+
+    public float getValor() {
+        return valor;
+    }
+
+    public void setValor(float valor) {
+        this.valor = valor;
+    }
+
+    public int getFrequenciaAplicacao() {
+        return frequenciaAplicacao;
+    }
+
+    public void setFrequenciaAplicacao(int frequenciaAplicacao) {
+        this.frequenciaAplicacao = frequenciaAplicacao;
     }
 
     public boolean isAtivo() {

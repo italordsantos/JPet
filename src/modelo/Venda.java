@@ -1,36 +1,24 @@
+package modelo;
+
+import java.util.ArrayList;
+import java.util.Date;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-
 /**
  *
- * @author italo
+ * @author Rafael
  */
 public class Venda {
-    
+
     private int id;
-    private boolean registroAtivo;
-    private LocalDateTime dataHora;
     private Pessoa cliente;
-    private final ArrayList<ProdutosServicos> listaProdutosServicos = new ArrayList<>();
-    private Animal animal;
-
-    public Venda() {
-    }
-
-    public Venda(int id, boolean registroAtivo, LocalDateTime dataHora, Pessoa cliente, Animal animal) {
-        this.id = id;
-        this.registroAtivo = registroAtivo;
-        this.dataHora = dataHora;
-        this.cliente = cliente;
-        this.animal = animal;
-    }
+    private Date dataHora;
+    private ArrayList<ItemVenda> itens;
+    private boolean ativo;
 
     public int getId() {
         return id;
@@ -38,22 +26,6 @@ public class Venda {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public boolean isRegistroAtivo() {
-        return registroAtivo;
-    }
-
-    public void setRegistroAtivo(boolean registroAtivo) {
-        this.registroAtivo = registroAtivo;
-    }
-
-    public LocalDateTime getDataHora() {
-        return dataHora;
-    }
-
-    public void setDataHora(LocalDateTime dataHora) {
-        this.dataHora = dataHora;
     }
 
     public Pessoa getCliente() {
@@ -64,17 +36,28 @@ public class Venda {
         this.cliente = cliente;
     }
 
-    public Animal getAnimal() {
-        return animal;
+    public Date getDataHora() {
+        return dataHora;
     }
 
-    public void setAnimal(Animal animal) {
-        this.animal = animal;
+    public void setDataHora(Date dataHora) {
+        this.dataHora = dataHora;
     }
 
-    @Override
-    public String toString() {
-        return "Venda{" + "id=" + id + ", registroAtivo=" + registroAtivo + ", dataHora=" + dataHora + ", cliente=" + cliente + ", listaProdutosServicos=" + listaProdutosServicos + ", animal=" + animal + '}';
+    public ArrayList<ItemVenda> getItens() {
+        return itens;
     }
-    
+
+    public void setItens(ArrayList<ItemVenda> itens) {
+        this.itens = itens;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
 }

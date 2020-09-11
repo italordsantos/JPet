@@ -5,24 +5,32 @@
  */
 package modelo.dao;
 
-import java.util.ArrayList;
-import modelo.Animal;
-import modelo.Cidade;
-import modelo.Estado;
-import modelo.Pessoa;
-import modelo.ProdutosServicos;
-import modelo.Venda;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  *
- * @author italo
+ * @author Rafael
  */
 public class Conexao {
+
+    private static Connection conexao;
+
+    public static Connection getConexao() throws ClassNotFoundException, SQLException {
+        if (conexao == null){
+           Class.forName("org.postgresql.Driver"); 
+           conexao = DriverManager.getConnection(
+                   "jdbc:postgresql://localhost:5432/petshop", //URL
+                   "postgres", //LOGIN
+                   "abc123*"); //SENHA
+        }
+        return conexao;
+    }
     
-    public static final ArrayList<Animal> BD_ANIMAL = new ArrayList<>();
-    public static final ArrayList<Cidade> BD_CIDADE = new ArrayList<>();
-    public static final ArrayList<Estado> BD_ESTADO = new ArrayList<>();
-    public static final ArrayList<Pessoa> BD_PESSOA = new ArrayList<>();
-    public static final ArrayList<ProdutosServicos> BD_PRODUTO_SERVICO = new ArrayList<>();
-    public static final ArrayList<Venda> BD_VENDA = new ArrayList<>();
+    public static PreparedStatement preparedStatement(String sql) throws ClassNotFoundException, SQLException {
+        return getConexao().prepareStatement(sql);
+    }
+
 }
